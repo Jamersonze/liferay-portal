@@ -95,7 +95,7 @@ definition {
 		CommerceAcceleratorsInitializer.createNewAccountViaFront(
 			accountName = "Commerce Account 1",
 			adminEmailAddress = "test@liferay.com");
-		
+
 		ApplicationsMenu.gotoSite(site = "Minium");
 
 		FrontStore.addInitializerProductToCart(
@@ -113,7 +113,6 @@ definition {
 		AssertElementNotPresent(
 			key_FilterOption = "${getOrderId}",
 			locator1 = "AppBuilder#CHOOSE_APP_SEARCH_FILTER_BY_OPTION");
-
 	}
 
 	@description = "COMMERCE-5956. As a buyer, I want to search for an account in the accounts list, and select it as active account"
