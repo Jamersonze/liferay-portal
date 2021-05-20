@@ -235,7 +235,6 @@ definition {
 		FormFields.viewParagraphField(
 			fieldTitle = "Paragraph",
 			url = "http://www.liferay.com");
-			
 	}
 
 	@description = "Verify that Bulleted Lists can be added to the Body Text"
