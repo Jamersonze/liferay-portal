@@ -659,7 +659,6 @@ definition {
 		MenuItem.click(menuItem = "Remove");
 
 		Button.clickPublish();
-		
 	}
 
 	@description = "This is a test for COMMERCE-6235. Product Group Lifecycle"
