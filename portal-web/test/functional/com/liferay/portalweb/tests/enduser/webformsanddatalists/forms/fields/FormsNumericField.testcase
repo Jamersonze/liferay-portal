@@ -311,14 +311,12 @@ definition {
 		FormViewBuilder.validatePredefinedText(
 			fieldName = "Numeric",
 			fieldValue = "123");
-		
+
 		FormViewBuilder.setFieldPredefinedText(fieldValue = " ");
 
 		Form.save();
 
 		Form.viewFormPlaceholderText(fieldPlaceholderText = "Numeric Placeholder Text");
-		
-
 	}
 
 	@description = "Verify that the Field Reference can be Edited"
