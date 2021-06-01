@@ -80,46 +80,44 @@ definition {
 		FormFields.viewRepeatableFieldDuplicateHidden();
 
 		FormFields.viewRepeatableFields(
-			rows = "1,2,3,4,5",
-			fieldName = "Upload");
+			fieldName = "Upload",
+			rows = "1,2,3,4,5");
 
 		FormFields.selectFileUpload(
-			rowNumber = "1",
 			fieldName = "Upload",
+			fileName = "Document_1.docx",
 			navTab = "Documents and Media",
-			fileName = "Document_1.docx");
-		
-		FormFields.selectFileUpload(
-			rowNumber = "2",
-			fieldName = "Upload",
-			navTab = "Documents and Media",
-			fileName = "Document_1.pdf");
+			rowNumber = "1");
 
 		FormFields.selectFileUpload(
-			rowNumber = "3",
 			fieldName = "Upload",
+			fileName = "Document_1.pdf",
 			navTab = "Documents and Media",
-			fileName = "Document_1.pptx");
-		
-		FormFields.selectFileUpload(
-			rowNumber = "4",
-			fieldName = "Upload",
-			navTab = "Documents and Media",
-			fileName = "Document_1.xlsx");
+			rowNumber = "2");
 
 		FormFields.selectFileUpload(
-			rowNumber = "5",
 			fieldName = "Upload",
+			fileName = "Document_1.pptx",
 			navTab = "Documents and Media",
-			fileName = "Document_1.jpg");
+			rowNumber = "3");
+
+		FormFields.selectFileUpload(
+			fieldName = "Upload",
+			fileName = "Document_1.xlsx",
+			navTab = "Documents and Media",
+			rowNumber = "4");
+
+		FormFields.selectFileUpload(
+			fieldName = "Upload",
+			fileName = "Document_1.jpg",
+			navTab = "Documents and Media",
+			rowNumber = "5");
 
 		FormPortlet.submit();
 
 		FormPortlet.viewSuccessPage(
 			successPageDescription = "Your information was successfully received. Thank you for filling out the form.",
 			successPageTitle = "Thank you.");
-
-
 	}
 
 	@description = "Verify that, by default, guest users cannot upload files"
