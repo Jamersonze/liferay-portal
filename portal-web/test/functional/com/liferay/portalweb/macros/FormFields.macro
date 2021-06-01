@@ -501,6 +501,27 @@ definition {
 		Click.clickNoWaitForVisible(locator1 = "FormFields#GRID_RADIO_OPTIONS");
 	}
 
+	macro selectFileUpload {
+
+		WaitForElementPresent(
+			key_fieldName = "${fieldName}",
+			locator1 = "FormFields#UPLOAD_ON_WIDGET_SINGLE_ROW");
+
+		if(isSet(rowNumber)){
+			Click(
+				key_rowNumber = "${rowNumber}",
+				key_fieldName = "${fieldName}",
+				locator1 = "FormFields#UPLOAD_ON_WIDGET_ON_ANY_FIELD");
+		}else{
+			Click(locator1 = "FormFields#UPLOAD_ON_WIDGET_SINGLE_ROW");
+		}
+
+		ItemSelector.uploadFile(
+			navTab = "${navTab}",
+			uploadFileName = "${fileName}");
+
+	}
+
 	macro selectRadioOption {
 		Click(
 			key_fieldName = "${fieldName}",
@@ -857,6 +878,23 @@ definition {
 			key_repeatableFieldNumber = "${repeatableFieldNumber}",
 			locator1 = "FormFields#REPEATABLE_HELP_TEXT",
 			value1 = "${fieldHelpText}");
+	}
+
+	macro viewRepeatableFieldDuplicateHidden {
+		AssertNotVisible(locator1 = "FormFields#FIELD_ADD_DUPLICATE");
+	}
+
+	macro viewRepeatableFieldDuplicateVisible {
+		AssertVisible(locator1 = "FormFields#FIELD_ADD_DUPLICATE");
+	}
+
+	macro viewRepeatableFields {
+		for (var row : list "${rows}") {
+			AssertElementPresent(
+				key_fieldName = "${fieldName}",
+				key_rowNumber = "${row}",
+				locator1 = "FormFields#UPLOAD_ON_WIDGET_ON_ANY_FIELD");
+		}
 	}
 
 	macro viewRepeatableTextFieldLabel {

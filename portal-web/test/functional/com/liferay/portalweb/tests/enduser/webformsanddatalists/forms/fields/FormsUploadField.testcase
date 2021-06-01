@@ -32,13 +32,93 @@ definition {
 	}
 
 	@description = "Verify that a user can upload up to 5 files when the Repeatable option is enabled"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test AllowsFiveUploadsWhenRepeatableIsEnabled {
 		property forms.functional = "true";
 		property portal.acceptance = "false";
 
-		// TODO LPS-133253 AllowsFiveUploadsWhenRepeatableIsEnabled pending implementation
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			portlet = "Forms");
+
+		FormsAdminNavigator.gotoAddForm();
+
+		Form.editName(formName = "Form 1");
+
+		Form.gotoAddField(
+			fieldPositionNumber = "0",
+			fieldType = "Upload");
+
+		Form.gotoAdvancedTab();
+
+		FormFields.enableSwitcher(fieldName = "repeatable");
+
+		FormFields.viewRepeatableFieldDuplicateVisible();
+
+		Form.save();
+
+		Form.publishForm();
+
+		FormsAdminNavigator.gotoPublishedForm();
+
+		FormFields.addRepeatableField(
+			fieldName = "Upload",
+			repeatableFieldNumber = "1");
+
+		FormFields.addRepeatableField(
+			fieldName = "Upload",
+			repeatableFieldNumber = "1");
+
+		FormFields.addRepeatableField(
+			fieldName = "Upload",
+			repeatableFieldNumber = "1");
+
+		FormFields.addRepeatableField(
+			fieldName = "Upload",
+			repeatableFieldNumber = "1");
+
+		FormFields.viewRepeatableFieldDuplicateHidden();
+
+		FormFields.viewRepeatableFields(
+			rows = "1,2,3,4,5",
+			fieldName = "Upload");
+
+		FormFields.selectFileUpload(
+			rowNumber = "1",
+			fieldName = "Upload",
+			navTab = "Documents and Media",
+			fileName = "Document_1.docx");
+		
+		FormFields.selectFileUpload(
+			rowNumber = "2",
+			fieldName = "Upload",
+			navTab = "Documents and Media",
+			fileName = "Document_1.pdf");
+
+		FormFields.selectFileUpload(
+			rowNumber = "3",
+			fieldName = "Upload",
+			navTab = "Documents and Media",
+			fileName = "Document_1.pptx");
+		
+		FormFields.selectFileUpload(
+			rowNumber = "4",
+			fieldName = "Upload",
+			navTab = "Documents and Media",
+			fileName = "Document_1.xlsx");
+
+		FormFields.selectFileUpload(
+			rowNumber = "5",
+			fieldName = "Upload",
+			navTab = "Documents and Media",
+			fileName = "Document_1.jpg");
+
+		FormPortlet.submit();
+
+		FormPortlet.viewSuccessPage(
+			successPageDescription = "Your information was successfully received. Thank you for filling out the form.",
+			successPageTitle = "Thank you.");
+
 
 	}
 
