@@ -202,7 +202,7 @@ definition {
 		Form.gotoAddField(
 			fieldPositionNumber = "0",
 			fieldType = "Image");
-		
+
 		FormViewBuilder.setFieldHelpText(fieldLabel = "Help Text Test");
 
 		Form.addTranslation(localizedLanguage = "Spanish (Spain)");
@@ -222,19 +222,18 @@ definition {
 		FormFields.viewTextLabel(fieldLabel = "Image");
 
 		FormFields.viewFieldHelpText(
-			fieldName = "Image",
-			fieldHelpText = "Help Text Test");
+			fieldHelpText = "Help Text Test",
+			fieldName = "Image");
 
 		FormViewBuilder.changeAppLanguageTo(changeAppLanguageTo = "en-US");
 
 		FormViewBuilder.changeAppLanguageTo(changeAppLanguageTo = "español-España");
-		
+
 		FormFields.viewTextLabel(fieldLabel = "Imagen");
 
 		FormFields.viewFieldHelpText(
-			fieldName = "Image",
-			fieldHelpText = "Texto de Ayuda");
-
+			fieldHelpText = "Texto de Ayuda",
+			fieldName = "Image");
 	}
 
 	@description = "Verify that the properties of a field remain the same when adding a translation"
