@@ -114,8 +114,6 @@ definition {
 			fieldValue = "5");
 
 		FormPortlet.submitAndViewSuccessPage();
-
-
 	}
 
 	@description = "Verify that a Color Field can be added to a Form via Fieldset"
