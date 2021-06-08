@@ -1309,6 +1309,7 @@ definition {
 			key_placeHolder = "${placeHolder}",
 			locator1 = "FormFields#TEXT_FIELD_PLACEHOLDER");
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 
 	macro viewFieldPosition {
@@ -1339,6 +1340,8 @@ definition {
 =======
 			
 >>>>>>> c87459b (LPS-133467 Add PreserveThePlaceholderText Test)
+=======
+>>>>>>> 4f30d52 (LPS-133467 SF)
 	}
 
 	macro viewFieldReference {
