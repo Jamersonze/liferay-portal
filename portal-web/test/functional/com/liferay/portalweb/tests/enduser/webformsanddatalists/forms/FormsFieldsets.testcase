@@ -694,11 +694,76 @@ definition {
 
 		FormsAdmin.addForm();
 
+<<<<<<< HEAD
 		Form.editName(formName = "Form 1");
 
 		Form.gotoAddElementSet(
 			elementSetTitle = "Element Set 1",
 			fieldPositionNumber = "0");
+=======
+	@description = "Verify that a Placeholder Text persists after being added to a Form via Fieldset"
+	@priority = "5"
+	test PreserveThePlaceholderText {
+		property forms.functional = "true";
+		property portal.acceptance = "false";
+
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			portlet = "Forms");
+
+		Navigator.gotoNavItem(navItem = "Element Sets");
+
+		FormsAdminNavigator.gotoAddElementSet();
+
+		Form.editName(formName = "Element Set 1");
+
+		Form.gotoAddField(fieldType = "Numeric");
+
+		Form.closeSidebar();
+
+		Form.addTextField(fieldPositionNumber = "1");
+
+		FormFields.viewFieldPlaceholderText(
+			fieldName = "Text",
+			placeHolder = "");
+		
+		FormViewBuilder.setPlaceholder(fieldValue = "Placeholder Text Test");
+
+		FormFields.viewFieldPlaceholderText(
+			fieldName = "Text",
+			placeHolder = "Placeholder Text Test");
+
+		Form.saveElementSet();
+
+		FormsAdminNavigator.gotoBack();
+
+		Navigator.gotoNavItem(navItem = "Forms");
+
+		FormsAdminNavigator.gotoAddForm();
+
+		Form.editName(formName = "Form 1");
+
+		Form.gotoAddElementSet(elementSetTitle = "Element Set 1");
+
+		FormFields.viewAnyField(fieldName = "Numeric");
+
+		FormFields.viewAnyField(fieldName = "Text");
+
+		FormFields.viewFieldPlaceholderText(
+			fieldName = "Text",
+			placeHolder = "Placeholder Text Test");
+
+		Form.save();
+
+		Form.publishForm();
+
+		FormsAdminNavigator.gotoPublishedForm();
+
+		FormFields.viewFieldPlaceholderText(
+			fieldName = "Text",
+			placeHolder = "Placeholder Text Test");
+
+>>>>>>> c87459b (LPS-133467 Add PreserveThePlaceholderText Test)
 
 		FormFields.viewLabel(
 			fieldLabel = "Text",

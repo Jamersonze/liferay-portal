@@ -1032,12 +1032,15 @@ definition {
 			locator1 = "FormFields#ANY_FIELD");
 	}
 
+<<<<<<< HEAD
 	macro viewAutoCompleteOption {
 		var key_autocompleteOption = "${autocompleteOption}";
 
 		AssertElementPresent(locator1 = "FormFields#AUTOCOMPLETE_OPTION");
 	}
 
+=======
+>>>>>>> c87459b (LPS-133467 Add PreserveThePlaceholderText Test)
 	macro viewCaptchaField {
 		AssertElementPresent.assertVisible(locator1 = "FormFields#CAPTCHA_FIELD");
 
@@ -1285,6 +1288,7 @@ definition {
 		}
 	}
 
+<<<<<<< HEAD
 	macro viewFieldNotRequired {
 		AssertElementNotPresent(
 			key_fieldFieldLabel = "${fieldLabel}",
@@ -1297,11 +1301,14 @@ definition {
 			locator1 = "FormFields#FIELD_HIDDEN");
 	}
 
+=======
+>>>>>>> c87459b (LPS-133467 Add PreserveThePlaceholderText Test)
 	macro viewFieldPlaceholderText {
 		AssertElementPresent(
 			key_fieldName = "${fieldName}",
 			key_placeHolder = "${placeHolder}",
 			locator1 = "FormFields#TEXT_FIELD_PLACEHOLDER");
+<<<<<<< HEAD
 	}
 
 	macro viewFieldPosition {
@@ -1329,6 +1336,9 @@ definition {
 			key_fieldName = "${fieldName}",
 			key_predefinedValue = "${predefinedValue}",
 			locator1 = "FormFields#TEXT_FIELD_PREDEFINED_VALUE");
+=======
+			
+>>>>>>> c87459b (LPS-133467 Add PreserveThePlaceholderText Test)
 	}
 
 	macro viewFieldReference {

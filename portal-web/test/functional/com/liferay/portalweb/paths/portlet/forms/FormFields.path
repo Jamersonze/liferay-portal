@@ -21,6 +21,7 @@
 	<td></td>
 </tr>
 <tr>
+<<<<<<< HEAD
 	<td>ANY_SOURCE_ELEMENT</td>
 	<td>//${key_elementName}[contains(.,'${key_value}')]</td>
 	<td></td>
@@ -41,6 +42,8 @@
 	<td></td>
 </tr>
 <tr>
+=======
+>>>>>>> c87459b (LPS-133467 Add PreserveThePlaceholderText Test)
 	<td>FIELD_ADD</td>
 	<td>//div[contains(@class,'form-field-repeatable-toolbar')]//a[contains(@class,'add-button')]</td>
 	<td></td>
@@ -549,11 +552,14 @@
 	<td></td>
 </tr>
 <tr>
+<<<<<<< HEAD
 	<td>TEXT_FIELD_PREDEFINED_VALUE</td>
 	<td>//div[contains(@data-field-name,'${key_fieldName}')]//input[@value='${key_predefinedValue}']</td>
 	<td></td>
 </tr>
 <tr>
+=======
+>>>>>>> c87459b (LPS-133467 Add PreserveThePlaceholderText Test)
 	<td>TEXT_FIELD_ALT</td>
 	<td>//input[@type='text' and contains(@id,'${key_fieldName}') and contains(@id,'Alt')]</td>
 	<td></td>
