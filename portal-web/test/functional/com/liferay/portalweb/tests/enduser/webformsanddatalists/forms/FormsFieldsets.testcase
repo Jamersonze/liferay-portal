@@ -444,8 +444,6 @@ definition {
 		FormFields.viewFieldPredefinedValue(
 			fieldName = "Text",
 			predefinedValue = "Predefined Value Test");
-			
-
 	}
 
 	@description = "Verify that a Repeatable Property persists after being added to a Form via Fieldset"
