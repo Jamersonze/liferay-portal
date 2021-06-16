@@ -362,6 +362,11 @@
     <td></td>
 </tr>
 <tr>
+	<td>FIELD_REQUIRED_INDICATOR</td>
+	<td>//p[contains(.,'Indicates Required Field')]</td>
+	<td></td>
+</tr>
+<tr>
     <td></td>
     <td></td>
     <td></td>
@@ -558,6 +563,11 @@
 <tr>
     <td>PAGE_MOVE_DISABLED</td>
     <td>//input[contains(@class,'page-header-title') and @value='${key_fieldName}']/../../../../..//button[@disabled and @title='${key_movePage}']</td>
+    <td></td>
+</tr>
+<tr>
+    <td>PAGE_NAME</td>
+    <td>//div[contains(@class,'ddm-form-page-container wizard')]['${key_pageName}']//h2[contains(text(),'${pageName}')]</td>
     <td></td>
 </tr>
 <tr>

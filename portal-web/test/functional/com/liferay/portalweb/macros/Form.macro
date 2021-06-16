@@ -785,6 +785,13 @@ definition {
 			locator1 = "Form#PAGE_EMPTY_FORM_FIELD_BY_NUMBER");
 	}
 
+	macro viewPageName {
+		AssertElementPresent(
+			key_pageName = "${formTitleNumber}",
+			locator1 = "Form#PAGE_NAME",
+			pageName = "${formPageName}");
+	}
+
 	macro viewPageTitleDefault {
 		AssertElementPresent(
 			key_pageNumber = "${pageIndex}",
@@ -795,6 +802,10 @@ definition {
 		var key_alertMessage = "The form was published successfully! Access it with this URL";
 
 		AssertVisible(locator1 = "Form#PUBLISH_UNPUBLISH_ICON_CLOSE");
+	}
+
+	macro viewRequiredFieldIndicator {
+		AssertElementPresent(locator1 = "Form#FIELD_REQUIRED_INDICATOR");
 	}
 
 	macro viewSaveNotification {
