@@ -4,6 +4,36 @@ definition {
 	var formName = "Created Form Name";
 	var rowNumber = "1";
 
+	macro addFieldSameRow {
+		var key_fieldLabel = "${fieldType}";
+
+		if (isSet(formPageNumber)) {
+			key_formPageNumber = "${formPageNumber}";
+		}
+		else {
+			key_formPageNumber = "0";
+		}
+
+		if (isSet(fieldColumnNumber)) {
+			key_fieldColumnNumber = "${fieldColumnNumber}";
+		}
+		else {
+			key_fieldColumnNumber = "0";
+		}
+
+		if (isSet(fieldRowNumber)) {
+			key_fieldRowNumber = "${fieldRowNumber}";
+		}
+		else {
+			key_fieldRowNumber = "0";
+		}
+
+		DragAndDrop.javaScriptDragAndDropToObject(
+			locator1 = "FormViewBuilder#SIDEBAR_FIELD_LABEL",
+			locator2 = "Form#ADD_FIELD_SPECIFIC_POSITION",
+			value1 = "${fieldType}");
+	}
+
 	macro addPage {
 		var key_formAddNewPageNumber = "${formAddNewPageNumber}";
 
@@ -487,6 +517,12 @@ definition {
 				locator1 = "Form#SIDEBAR_ELEMENTS_TAB",
 				value1 = "Elements");
 		}
+	}
+
+	macro gotoFieldContainer {
+		Click(
+			key_fieldName = "${fieldName}",
+			locator1 = "Form#FIELD_LABEL");
 	}
 
 	macro gotoFieldsTab {
