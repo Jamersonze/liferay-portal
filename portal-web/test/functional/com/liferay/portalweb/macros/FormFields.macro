@@ -302,6 +302,12 @@ definition {
 			value1 = "${fieldValue}");
 	}
 
+	macro editPlaceholder {
+		Type(
+			locator1 = "FormFields#SIDEBAR_BASIC_PLACEHOLDER",
+			value1 = "${placeholder}");
+	}
+
 	macro editPredefinedValue {
 		Form.gotoAdvancedTab();
 
@@ -618,6 +624,14 @@ definition {
 		AssertElementNotPresent(
 			changeAppLanguageTo = "${key_language}",
 			locator1 = "FormViewBuilder#SELECT_LANGUAGE_AT_APP_DEPLOYED");
+	}
+
+	macro resizeField {
+		Form.gotoFieldContainer(fieldName = "${fieldName}");
+
+		DragAndDrop.dragAndDrop(
+			locator1 = "FormFields#FIELD_HANDLE_RIGHT",
+			value1 = "${moveForce},0");
 	}
 
 	macro selectAutoCompleteOption {
@@ -1082,6 +1096,13 @@ definition {
 				key_duplicatedIndex = "${number}",
 				locator1 = "FormFields#FIELD_REPEATABLE_BUTTON_BY_INDEX");
 		}
+	}
+
+	macro viewFieldSize {
+		AssertElementPresent(
+			key_fieldName = "${fieldName}",
+			key_size = "${size}",
+			locator1 = "FormFields#FIELD_SIZE");
 	}
 
 	macro viewFieldValidationErrorMessage {

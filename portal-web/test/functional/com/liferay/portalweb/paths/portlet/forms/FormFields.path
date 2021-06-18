@@ -59,8 +59,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>FIELD_HANDLE_RIGHT</td>
+	<td>//div[contains(@class,'resize-handle-right')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>FIELD_REMOVE</td>
 	<td>xpath=(//div[contains(@class,'ddm-field')][contains(@data-field-name,'${key_fieldName}')][not(contains(@class,'container'))])[${key_index}]//button[contains(@class,'ddm-form-field-repeatable-delete-button')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>FIELD_SIZE</td>
+	<td>//div[contains(@class,'col-md-${key_size}')]/div[contains(@data-field-name,'${key_fieldName}')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -877,6 +887,11 @@
 <tr>
 	<td>SIDEBAR_BASIC_HELP_TEXT</td>
 	<td>//input[contains(@name,'tip')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SIDEBAR_BASIC_PLACEHOLDER</td>
+	<td>//input[contains(@name,'placeholder')]</td>
 	<td></td>
 </tr>
 </tbody>
