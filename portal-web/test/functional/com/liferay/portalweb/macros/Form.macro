@@ -4,6 +4,14 @@ definition {
 	var formName = "Created Form Name";
 	var rowNumber = "1";
 
+	macro addFieldFromSidebarToFieldsGroup {
+		DragAndDrop.javaScriptDragAndDropToBottom(
+			key_fieldLabel = "${key_fieldLabel}",
+			key_fieldName = "${key_fieldName}",
+			locator1 = "Sidebar#ADD_FIELD_NAME",
+			locator2 = "FormFields#LABEL");
+	}
+
 	macro addPage {
 		var key_formAddNewPageNumber = "${formAddNewPageNumber}";
 
@@ -489,6 +497,12 @@ definition {
 		}
 	}
 
+	macro gotoFieldContainer {
+		Click(
+			key_fieldName = "${fieldName}",
+			locator1 = "Form#FIELD_LABEL");
+	}
+
 	macro gotoFieldsTab {
 		AssertClick(
 			locator1 = "Form#SIDEBAR_FIELDS_TAB",
@@ -519,6 +533,28 @@ definition {
 				value1 = "Properties");
 		}
 		Pause(locator1 = "1000");
+	}
+
+	macro moveFieldToRow {
+		if (isSet(formPageNumber)) {
+			key_formPageNumber = "${formPageNumber}";
+		}
+		else {
+			key_formPageNumber = "0";
+		}
+
+		if (isSet(fieldPositionNumber)) {
+			key_fieldPositionNumber = "${fieldPositionNumber}";
+		}
+		else {
+			key_fieldPositionNumber = "0";
+		}
+
+		DragAndDrop.javaScriptDragAndDropToUp(
+			key_fieldLabel = "${fieldLabel}",
+			key_fieldName = "${fieldNameTarget}",
+			locator1 = "FormFields#LABEL",
+			locator2 = "Form#ADD_FIELD_POSITION");
 	}
 
 	macro pageReset {
