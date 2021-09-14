@@ -117,6 +117,8 @@ Export-Package:\
 	\
 	com.thoughtworks.xstream.*;version='1.4.17',\
 	\
+	com.zaxxer;version='1.2',\
+	\
 	io.netty.*,\
 	\
 	java_cup.runtime.*;version='2.7.1',\
@@ -357,6 +359,7 @@ Provide-Capability:\
 	@../../../lib/portal/portletmvc4spring-framework.jar,\
 	@../../../lib/portal/rome.jar,\
 	@../../../lib/portal/slf4j-api.jar,\
+	@../../../lib/portal/sparse-bit-set.jar,\
 	@../../../lib/portal/spring-aop.jar,\
 	@../../../lib/portal/spring-aspects.jar,\
 	@../../../lib/portal/spring-beans.jar,\
